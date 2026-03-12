@@ -1,0 +1,55 @@
+/* ─── Global Reset & Base ─────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+:root {
+    /* Color Palette - Clean Corporate Light Theme (Minimalist & Trustworthy) */
+    --bg-primary: #F8FAFC;
+    /* Soft off-white base background */
+    --bg-surface: #FFFFFF;
+    /* Pure white for cards/sections */
+    --text-primary: #0F172A;
+    /* Deep slate for primary text */
+    --text-secondary: #64748B;
+    /* Muted slate for subtitles & borders */
+    --brand-gold: #DC2626;
+    /* Corporate red accent */
+    --brand-gold-bright: #EF4444;
+    /* Bright red highlight */
+    --navbar-bg: rgba(248, 250, 252, 0.97);
+    --border-color: rgba(100, 116, 139, 0.15);
+    --shadow-soft: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}

@@ -1,0 +1,146 @@
+/* ═══════════════════════════════════════════════════════════
+   PARTNERS SECTION (EDITORIAL LEADERSHIP)
+   ═══════════════════════════════════════════════════════════ */
+.pt {
+    background-color: #1a1a1a;
+    padding: 10rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.pt__inner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 8rem;
+}
+
+/* ── Heading ────────────────────────────────────────────── */
+.pt__header {
+    margin-bottom: 6rem;
+}
+
+.pt__overline {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: #c4a77d;
+    /* Muted Gold */
+    margin-bottom: 1.5rem;
+}
+
+.pt__title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 400;
+    color: #c4a77d;
+    /* Light Gold / White mix */
+    line-height: 1.1;
+    max-width: 900px;
+}
+
+/* ── Strict 3-Column Grid ───────────────────────────────── */
+.pt__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    /* Generous gap */
+}
+
+/* ── Team Member Card ───────────────────────────────────── */
+.pt__member {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Editorial Portrait ─────────────────────────────────── */
+.pt__portrait-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: #000;
+    margin-bottom: 2.5rem;
+}
+
+.pt__portrait {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    filter: grayscale(100%);
+    transition: filter 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    /* Use pointer events to handle hover on whole card via JS or CSS */
+}
+
+.pt__member:hover .pt__portrait {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* ── Info ───────────────────────────────────────────────── */
+.pt__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.pt__name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: #c4a77d;
+    /* Gold */
+    font-weight: 500;
+    margin: 0;
+}
+
+.pt__role {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.5);
+    /* Muted Gray */
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* ── Responsive Stacking ───────────────────────────────── */
+@media (max-width: 1440px) {
+    .pt__inner {
+        padding: 0 4rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .pt__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .pt__inner {
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pt {
+        padding: 6rem 0;
+    }
+
+    .pt__grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .pt__inner {
+        padding: 0 1.5rem;
+    }
+
+    .pt__header {
+        margin-bottom: 4rem;
+    }
+}

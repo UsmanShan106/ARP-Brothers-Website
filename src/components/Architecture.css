@@ -1,0 +1,244 @@
+/* ═══════════════════════════════════════════════════════════
+   ARCHITECTURE SECTION (BEM) - LIGHT THEME (RED ACCENT)
+   ═══════════════════════════════════════════════════════════ */
+.arch {
+    background-color: #F8FAFC;
+    /* White-ish background */
+    padding: 10rem 0;
+    border-top: 1px solid rgba(220, 38, 38, 0.1);
+    /* Red border */
+    overflow: hidden;
+    position: relative;
+}
+
+.arch__inner {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 8rem;
+}
+
+/* ── Heading ────────────────────────────────────────────── */
+.arch__header {
+    margin-bottom: 6rem;
+}
+
+.arch__sub {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: #DC2626;
+    /* Corporate Red */
+    margin-bottom: 1.5rem;
+}
+
+.arch__divider {
+    width: 50px;
+    height: 1px;
+    background-color: rgba(220, 38, 38, 0.3);
+}
+
+/* ── Asymmetric Grid ────────────────────────────────────── */
+.arch__grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 3rem;
+    align-items: stretch;
+}
+
+/* ── Card Styling ─────────────────────────────────────── */
+.arch__card {
+    position: relative;
+    background: #FFFFFF;
+    /* Pure white card */
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    /* Red border */
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    cursor: default;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.arch__card:hover {
+    background: #FFFFFF;
+    border-color: #DC2626;
+    /* Solid Red on hover */
+    box-shadow: 0 10px 40px rgba(220, 38, 38, 0.1);
+}
+
+/* Asymmetry Logic */
+.arch__card--large {
+    grid-column: span 8;
+}
+
+.arch__card--small {
+    grid-column: span 4;
+}
+
+/* Technical Corner Accents */
+.arch__card::before,
+.arch__card::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    pointer-events: none;
+}
+
+.arch__card::before {
+    top: 0;
+    right: 0;
+    border-top: 1px solid #DC2626;
+    border-right: 1px solid #DC2626;
+    transform: translate(10px, -10px);
+}
+
+.arch__card::after {
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #DC2626;
+    border-left: 1px solid #DC2626;
+    transform: translate(-10px, 10px);
+}
+
+.arch__card:hover::before,
+.arch__card:hover::after {
+    opacity: 0.6;
+    transform: translate(0, 0);
+}
+
+/* ── Card Content ─────────────────────────────────────── */
+.arch__id {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(220, 38, 38, 0.4);
+    margin-bottom: 3.5rem;
+    display: block;
+}
+
+.arch__card:hover .arch__id {
+    color: #DC2626;
+}
+
+.arch__title {
+    font-family: 'Cormorant Garamond', serif;
+    color: #0F172A;
+    /* Deep Black/Slate Title */
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    transition: transform 0.7s ease;
+}
+
+.arch__card:hover .arch__title {
+    transform: translateX(10px);
+}
+
+.arch__card--large .arch__title {
+    font-size: 4.5rem;
+    max-width: 80%;
+}
+
+.arch__card--small .arch__title {
+    font-size: 2.25rem;
+}
+
+.arch__text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #64748B;
+    /* Slate Gray Text */
+    max-width: 90%;
+    font-weight: 400;
+    transition: color 0.5s ease;
+}
+
+.arch__card:hover .arch__text {
+    color: #0F172A;
+}
+
+/* ── CTA ──────────────────────────────────────────────── */
+.arch__footer {
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+}
+
+.arch__cta {
+    background: transparent;
+    border: 1px solid #DC2626;
+    padding: 1.5rem 4rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #DC2626;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: color 0.5s ease;
+}
+
+.arch__cta-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: #DC2626;
+    z-index: -1;
+    transition: height 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.arch__cta:hover {
+    color: #FFFFFF;
+    /* White text on red background */
+}
+
+.arch__cta:hover .arch__cta-bg {
+    height: 100%;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1440px) {
+    .arch__inner {
+        padding: 0 4rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .arch__grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .arch__card--large .arch__title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .arch {
+        padding: 6rem 0;
+    }
+
+    .arch__inner {
+        padding: 0 1.5rem;
+    }
+
+    .arch__card {
+        padding: 2.5rem;
+    }
+}

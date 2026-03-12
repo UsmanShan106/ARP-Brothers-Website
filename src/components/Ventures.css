@@ -1,0 +1,152 @@
+.ventures {
+    position: relative;
+    background-color: #1a1a1a;
+    overflow: hidden;
+}
+
+.ventures__sticky {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5vw;
+}
+
+.ventures__header {
+    margin-bottom: 4rem;
+    z-index: 5;
+}
+
+.ventures__sub {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.ventures__title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: #ffffff;
+}
+
+.ventures__scroll-container {
+    display: flex;
+    gap: 8vw;
+    width: max-content;
+    padding-bottom: 5vh;
+}
+
+.ventures__card {
+    width: 70vw;
+    height: 60vh;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.ventures__card:nth-child(even) {
+    margin-top: 10vh;
+}
+
+.ventures__card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
+}
+
+.ventures__image-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ventures__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ventures__card-inner:hover .ventures__image {
+    transform: scale(1.05);
+}
+
+.ventures__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+    opacity: 0.6;
+    transition: opacity 0.6s ease;
+}
+
+.ventures__card-inner:hover .ventures__overlay {
+    opacity: 0.8;
+}
+
+.ventures__info {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    color: #fff;
+    z-index: 2;
+}
+
+.ventures__item-cat {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 0.75rem;
+    display: block;
+    opacity: 0.8;
+    transform: translateY(20px);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.ventures__item-name {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    font-weight: 300;
+    transform: translateY(30px);
+    transition: transform 0.8s ease 0.1s, opacity 0.8s ease 0.1s;
+}
+
+.ventures__item-desc {
+    font-size: 1rem;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.8s ease 0.2s, opacity 0.8s ease 0.2s;
+}
+
+.ventures__card-inner:hover .ventures__item-cat,
+.ventures__card-inner:hover .ventures__item-name,
+.ventures__card-inner:hover .ventures__item-desc {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.ventures__stopper {
+    width: 20vw;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .ventures__card {
+        width: 85vw;
+    }
+
+    .ventures__item-name {
+        font-size: 2rem;
+    }
+}
